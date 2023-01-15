@@ -1,4 +1,4 @@
-FROM python:3.9.13-slim
+FROM python:3.9.15-slim
 
 RUN pip install -U pip
 
@@ -10,7 +10,7 @@ COPY [ "Pipfile", "Pipfile.lock", "./" ]
 
 RUN pipenv install --system --deploy
 
-COPY [ "predict.py", "model.h5", "./" ]
+COPY [ "predict.py", "eng-fra-transformer.h5", "./" ]
 
 EXPOSE 9696
 
